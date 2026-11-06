@@ -1,1 +1,82 @@
-[]
+[
+    {
+        "id": "0f7ff510366e35f8",
+        "type": "tab",
+        "label": "Flujo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fb0b198df67343e6",
+        "type": "inject",
+        "z": "0f7ff510366e35f8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"texto\":\"Hola UPSE\"}",
+        "payloadType": "jsonata",
+        "x": 50,
+        "y": 100,
+        "wires": [
+            [
+                "80c578e747127ed0"
+            ]
+        ]
+    },
+    {
+        "id": "bb8e671f7a7a4a1b",
+        "type": "debug",
+        "z": "0f7ff510366e35f8",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "80c578e747127ed0",
+        "type": "change",
+        "z": "0f7ff510366e35f8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.texto",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 100,
+        "wires": [
+            [
+                "bb8e671f7a7a4a1b"
+            ]
+        ]
+    }
+]
